@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment & secrets (never commit)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# PocketBase — runtime data & platform-specific binary (use scripts/install-pocketbase.sh)
+apps/pocketbase/pb_data/
+apps/pocketbase/pb_data.backup*/
+apps/pocketbase/pb_snapshots/
+apps/pocketbase/pocketbase
+
+# Logs & debug
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Vite
+**/.vite/
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Profiling / misc
+*.profraw
