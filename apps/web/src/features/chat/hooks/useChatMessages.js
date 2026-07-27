@@ -79,6 +79,7 @@ export function useChatMessages(sessionId) {
             content: data.reply,
             status: 'sent',
             simulated: data.simulated,
+            animate: true,
           },
         ]);
       } catch (err) {

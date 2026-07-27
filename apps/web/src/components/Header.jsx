@@ -31,11 +31,11 @@ const Header = ({
   }];
   const socialLinks = [{
     icon: Github,
-    href: 'https://github.com',
+    href: 'https://github.com/saadamjad',
     label: 'GitHub'
   }, {
     icon: Linkedin,
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/saad-amjad-0b398116b/',
     label: 'LinkedIn'
   }, {
     icon: Twitter,

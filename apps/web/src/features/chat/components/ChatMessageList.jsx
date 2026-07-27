@@ -18,6 +18,8 @@ export default function ChatMessageList({ messages, isLoading, bottomRef, isHydr
           role={msg.role}
           content={msg.content}
           status={msg.status}
+          simulated={msg.simulated}
+          animate={msg.animate}
         />
       ))}
       {isLoading && <ChatTypingIndicator />}

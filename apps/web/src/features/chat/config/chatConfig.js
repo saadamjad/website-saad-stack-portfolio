@@ -1,4 +1,4 @@
-const API_BASE = '/hcgi/platform/chat';
+const API_BASE = import.meta.env.VITE_CHAT_API_BASE || '/hcgi/platform/chat';
 
 export default {
   apiBase: API_BASE,
