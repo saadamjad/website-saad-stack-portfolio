@@ -1,12 +1,17 @@
 # website-saad-stack-portfolio
 
-Saad's portfolio — React (Vite) + PocketBase + ZizkaDB smart personal representative.
+Saad's portfolio — React (Vite) + PocketBase.
+
+The AI chat agent that powers the site's chat widget lives in a separate repository
+([Personal-AI-Agent](https://github.com/saadamjad/Personal-AI-Agent), Python + FastAPI
++ CrewAI) and is deployed independently. This repo only owns the site itself and the
+chat widget's UI — see `apps/web/src/features/chat/`.
 
 ## Local development
 
 ```bash
 npm install
-cp .env.example .env   # add ZIZKADB_API_KEY + OPENAI_API_KEY (or ANTHROPIC_API_KEY)
+cp .env.example .env
 bash scripts/dev-local.sh
 ```
 
@@ -14,44 +19,13 @@ bash scripts/dev-local.sh
 |---------|-----|
 | Site | http://localhost:3000 |
 | PocketBase admin | http://localhost:8090/_/ |
-| Chat health | http://localhost:8090/chat/health |
 
-## Smart agent architecture
+## Connecting the chat widget to the agent
 
-```
-User question
-  → moderation (abuse/greetings)
-  → query rewrite (LLM) + dual ZizkaDB semantic search
-  → LLM answer (OpenAI or Anthropic) with memory + history
-  → auto-learn Q&A to ZizkaDB (CHAT_AUTO_LEARN=true)
-```
-
-**Requires an LLM key** for smart paraphrase understanding. Without it, falls back to keyword + ZizkaDB memory snippets.
-
-### Setup
-
-1. `ZIZKADB_API_KEY` + `ZIZKADB_AGENT_ID=chat-agent-saad-portfolio`
-2. `OPENAI_API_KEY=sk-...` **or** `ANTHROPIC_API_KEY=...`
-3. Seed knowledge: `bash scripts/seed-zizkadb.sh`
-4. Restart PocketBase after hook changes
-
-### Teach new facts
-
-```bash
-bash scripts/teach.sh --text "Saad graduated from XYZ University"
-bash scripts/teach.sh --question "Does Saad know Docker?" --answer "Yes — used Docker on Retailo B2B."
-```
-
-### Edit knowledge base
-
-`apps/pocketbase/pb_hooks/chat/life_knowledge.js` → reseed.
-
-### Health check
-
-```bash
-curl http://localhost:8090/chat/health
-# llm: true, autoLearn: true, llmProvider: "openai"
-```
+The chat widget calls whatever URL `VITE_CHAT_API_BASE` is set to (see
+`apps/web/src/features/chat/config/chatConfig.js`). Set it in `apps/web/.env` to the
+running `portfolio-agent` service's `/api/v1/chat` endpoint — see that repo's
+`DEPLOYMENT.md` for details. Without it set, the chat widget has nothing to talk to.
 
 ## Commit hygiene
 
