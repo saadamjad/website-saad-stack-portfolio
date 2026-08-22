@@ -29,7 +29,7 @@ bash scripts/dev-local.sh
 
 The chat widget calls whatever URL `VITE_CHAT_API_BASE` is set to (see
 `apps/web/src/features/chat/config/chatConfig.js`). Set it in `apps/web/.env` to the
-running `portfolio-agent` service's `/api/v1/chat` endpoint — see that repo's
+running personal-assistant service's `/api/v1/chat` endpoint — see that repo's
 `DEPLOYMENT.md` for details. Without it set, the chat widget has nothing to talk to.
 
 ## Commit hygiene

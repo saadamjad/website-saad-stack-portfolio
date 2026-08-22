@@ -23,7 +23,7 @@ echo "→ Portfolio dev"
 echo "   Site:       http://localhost:3000"
 echo "   PocketBase: http://localhost:8090/_/"
 echo ""
-echo "   The AI chat agent runs as a separate service (portfolio-agent)."
+echo "   The AI chat agent runs as a separate service (personal-assistant)."
 echo "   Set VITE_CHAT_API_BASE in apps/web/.env to point the chat widget at it."
 echo ""
 
