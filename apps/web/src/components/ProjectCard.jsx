@@ -5,9 +5,9 @@ import { ExternalLink } from 'lucide-react';
 
 const ProjectCard = ({ title, description, techStack, impact }) => {
   return (
-    <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2 group h-full flex flex-col">
+    <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-smooth hover:shadow-premium-lg hover:-translate-y-1 group h-full flex flex-col">
       <CardHeader>
-        <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+        <CardTitle className="text-xl font-bold leading-snug group-hover:text-primary transition-colors duration-300">
           {title}
         </CardTitle>
         <CardDescription className="text-muted-foreground leading-relaxed">

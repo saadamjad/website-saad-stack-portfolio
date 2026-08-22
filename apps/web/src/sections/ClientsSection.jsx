@@ -1,26 +1,22 @@
 import React from 'react';
 
 const ClientsSection = () => {
-  const clients = [
-    { name: 'Hao Saudi', color: 'text-[#00D9FF]' },
-    { name: 'Retailo', color: 'text-foreground' },
-    { name: 'Washmen', color: 'text-primary' }
-  ];
+  const clients = ['Hao Saudi', 'Retailo', 'Washmen'];
 
   return (
-    <section className="py-16 border-y border-border/50 bg-background/50">
+    <section className="py-16 border-y border-border/50 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-8">
-          Trusted by leading companies serving millions of users
+          Companies I have built products with
         </p>
         
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
-          {clients.map((client, index) => (
+          {clients.map((name) => (
             <div 
-              key={index} 
-              className={`text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight opacity-70 hover:opacity-100 transition-smooth cursor-default ${client.color}`}
+              key={name} 
+              className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground/70 hover:text-primary transition-smooth cursor-default"
             >
-              {client.name}
+              {name}
             </div>
           ))}
         </div>

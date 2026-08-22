@@ -57,7 +57,10 @@ const TechStackSection = () => {
       name: 'AWS',
       icon: Cloud
     }, {
-      name: 'Github Actions',
+      name: 'GitHub Actions',
+      icon: Cloud
+    }, {
+      name: 'Docker',
       icon: Cloud
     }, {
       name: 'CI/CD',
@@ -67,7 +70,7 @@ const TechStackSection = () => {
     title: 'Databases',
     icon: Database,
     technologies: [{
-      name: 'AWS Dynamo',
+      name: 'DynamoDB',
       icon: Database
     }, {
       name: 'MongoDB',
@@ -109,13 +112,13 @@ const TechStackSection = () => {
       icon: BarChart
     }]
   }];
-  return <section id="tech-stack" className="py-24">
+  return <section id="tech-stack" className="py-24 scroll-mt-20 bg-card/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
           Tech <span className="text-primary">stack</span>
         </h2>
         <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
-          Technologies I use to build systems
+          The tools I use to design, build, and ship production systems
         </p>
 
         <div className="space-y-16">

@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Saad - Senior Full-Stack Engineer | Mobile & Web Systems</title>
+        <title>Saad Amjad - Senior Full-Stack Engineer | Mobile & Web Systems</title>
         <meta
           name="description"
           content="Senior full-stack engineer with 7 years of experience building scalable mobile and web applications. Specialized in React Native, Node.js, and cloud infrastructure."

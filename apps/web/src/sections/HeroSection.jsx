@@ -5,7 +5,7 @@ import ParticleBackground from '@/components/ParticleBackground.jsx';
 const HeroSection = ({
   scrollToSection
 }) => {
-  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="hero" className="relative min-h-[100svh] scroll-mt-20 flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: 'url(https://images.unsplash.com/photo-1671377971962-762c386d3194?w=1600&q=60&auto=format&fit=crop)',
@@ -24,7 +24,7 @@ const HeroSection = ({
         <ParticleBackground />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" style={{
           letterSpacing: '-0.02em'
@@ -35,26 +35,26 @@ const HeroSection = ({
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Full-stack engineer with 7 years of experience crafting high-performance applications for millions of users
+            Senior full-stack engineer with 7 years of experience building high-performance applications
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" onClick={() => scrollToSection('work')} className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
+            <Button size="lg" onClick={() => scrollToSection('work')} className="h-12 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               View work
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
-            <Button asChild size="lg" className="border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8">
+            <Button asChild size="lg" className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               <a href="https://www.linkedin.com/in/saad-amjad-0b398116b/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 w-5 h-5" />
                 LinkedIn
               </a>
             </Button>
 
-            <Button asChild size="lg" className="border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8">
+            <Button asChild size="lg" className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               <a href="https://github.com/saadamjad" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 w-5 h-5" />
-                View GitHub
+                GitHub
               </a>
             </Button>
           </div>

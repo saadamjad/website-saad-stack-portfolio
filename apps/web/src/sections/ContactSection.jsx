@@ -5,13 +5,13 @@ import { Button } from '@/components/ui/button';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 bg-card/20">
+    <section id="contact" className="py-24 scroll-mt-20 bg-card/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
           Get in <span className="text-primary">touch</span>
         </h2>
         <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
-          Have a project in mind? Let's build something amazing together
+          Have a project in mind? Let&apos;s build something together
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -70,18 +70,18 @@ const ContactSection = () => {
             </div>
 
             <div className="pt-6 border-t border-border/50">
-              <h4 className="font-semibold mb-4 text-lg">Quick Contact</h4>
+              <h4 className="font-semibold mb-4 text-lg">Quick contact</h4>
               <div className="flex flex-wrap gap-4">
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground transition-smooth" asChild>
                   <a href="tel:+923362065663">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call Now
+                    Call now
                   </a>
                 </Button>
                 <Button className="bg-[#25D366] hover:bg-[#25D366]/90 text-white transition-smooth" asChild>
                   <a href="https://wa.me/923362065663" target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    WhatsApp Me
+                    WhatsApp
                   </a>
                 </Button>
               </div>

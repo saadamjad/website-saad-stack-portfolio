@@ -76,13 +76,13 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-24">
+    <section id="experience" className="py-24 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
           Career <span className="text-primary">journey</span>
         </h2>
-        <p className="text-xl text-foreground/70 mb-16 text-center">
-          My professional experience over the years
+        <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
+          Roles I have held and the work I owned in each one
         </p>
 
         <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-accent before:to-transparent">
@@ -94,7 +94,7 @@ const ExperienceSection = () => {
 
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-smooth hover:shadow-premium-lg">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
-                  <h3 className="font-bold text-xl text-foreground">{exp.role}</h3>
+                  <h3 className="font-bold text-xl leading-snug text-foreground">{exp.role}</h3>
                   <span className={`text-sm font-medium px-3 py-1 rounded-full ${exp.bgColor} ${exp.color} w-fit`}>
                     {exp.period}
                   </span>

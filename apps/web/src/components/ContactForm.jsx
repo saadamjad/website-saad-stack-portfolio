@@ -113,7 +113,7 @@ const ContactForm = () => {
           type="text"
           value={formData.name}
           onChange={handleChange}
-          className="mt-2 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
+          className="mt-2 h-11 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
           placeholder="Your name"
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? 'name-error' : undefined}
@@ -131,7 +131,7 @@ const ContactForm = () => {
           type="email"
           value={formData.email}
           onChange={handleChange}
-          className="mt-2 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
+          className="mt-2 h-11 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
           placeholder="your.email@example.com"
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? 'email-error' : undefined}

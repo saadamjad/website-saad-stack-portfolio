@@ -1,15 +1,18 @@
 import React from 'react';
 const AboutSection = () => {
-  return <section id="about" className="py-24 bg-card/20">
+  return <section id="about" className="py-24 scroll-mt-20 bg-card/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
             About <span className="text-primary">me</span>
           </h2>
+          <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
+            How I work and the products I have shipped
+          </p>
           
           <div className="space-y-6 text-lg leading-relaxed text-foreground/90">
             <p>
-              I’m a React Native specialist with 7 years of experience building high-performance mobile apps for iOS and Android. My journey has evolved from working on solo projects to leading development efforts for large-scale platforms.
+              I'm a React Native specialist with 7 years of experience building high-performance mobile apps for iOS and Android. My journey has evolved from working on solo projects to leading development efforts for large-scale platforms.
             </p>
             
             <p>

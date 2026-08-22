@@ -13,9 +13,9 @@ const Footer = ({ scrollToSection }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl font-bold text-primary mb-4">Saad</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">M. Saad Amjad</h3>
             <p className="text-foreground/70 mb-6 max-w-xs">
-              Senior Full-Stack Engineer building scalable mobile and web systems for millions of users.
+              Senior full-stack engineer building scalable mobile and web systems.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
@@ -34,7 +34,7 @@ const Footer = ({ scrollToSection }) => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-4">
               <li>
                 <a href="tel:+923362065663" className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-smooth group">
@@ -52,11 +52,13 @@ const Footer = ({ scrollToSection }) => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">Quick links</h4>
             <ul className="space-y-2">
-              <li><button onClick={() => scrollToSection('about')} className="text-foreground/70 hover:text-primary transition-smooth">About Me</button></li>
-              <li><button onClick={() => scrollToSection('work')} className="text-foreground/70 hover:text-primary transition-smooth">Portfolio</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-foreground/70 hover:text-primary transition-smooth">About</button></li>
+              <li><button onClick={() => scrollToSection('experience')} className="text-foreground/70 hover:text-primary transition-smooth">Experience</button></li>
+              <li><button onClick={() => scrollToSection('work')} className="text-foreground/70 hover:text-primary transition-smooth">Work</button></li>
               <li><button onClick={() => scrollToSection('services')} className="text-foreground/70 hover:text-primary transition-smooth">Services</button></li>
+              <li><button onClick={() => scrollToSection('reviews')} className="text-foreground/70 hover:text-primary transition-smooth">Reviews</button></li>
               <li><button onClick={() => scrollToSection('contact')} className="text-foreground/70 hover:text-primary transition-smooth">Contact</button></li>
             </ul>
           </div>
@@ -64,7 +66,7 @@ const Footer = ({ scrollToSection }) => {
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-foreground/60">
-            © 2026 Saad. All rights reserved.
+            © 2026 M. Saad Amjad. All rights reserved.
           </p>
           <p className="text-sm text-foreground/60 flex items-center gap-1">
             Built with <span className="text-primary font-medium">React</span> & <span className="text-accent font-medium">Tailwind</span>
