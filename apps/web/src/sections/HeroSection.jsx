@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight, Github, Mail } from 'lucide-react';
 import ParticleBackground from '@/components/ParticleBackground.jsx';
 const HeroSection = ({
   scrollToSection
@@ -47,6 +47,13 @@ const HeroSection = ({
             <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
               <Mail className="mr-2 w-5 h-5" />
               Contact me
+            </Button>
+
+            <Button asChild size="lg" variant="outline" className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
+              <a href="https://github.com/saadamjad" target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 w-5 h-5" />
+                View GitHub
+              </a>
             </Button>
           </div>
         </div>
