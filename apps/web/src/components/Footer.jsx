@@ -1,12 +1,10 @@
 import React from 'react';
-import { Phone, Mail, Github, Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
+import { Phone, Mail, Github, Linkedin, MessageCircle } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ scrollToSection }) => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/saadamjad', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/saad-amjad-0b398116b/', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
     { icon: MessageCircle, href: 'https://wa.me/923362065663', label: 'WhatsApp' }
   ];
 
@@ -62,10 +60,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#about" className="text-foreground/70 hover:text-primary transition-smooth">About Me</a></li>
-              <li><a href="#work" className="text-foreground/70 hover:text-primary transition-smooth">Portfolio</a></li>
-              <li><a href="#services" className="text-foreground/70 hover:text-primary transition-smooth">Services</a></li>
-              <li><a href="#contact" className="text-foreground/70 hover:text-primary transition-smooth">Contact</a></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-foreground/70 hover:text-primary transition-smooth">About Me</button></li>
+              <li><button onClick={() => scrollToSection('work')} className="text-foreground/70 hover:text-primary transition-smooth">Portfolio</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-foreground/70 hover:text-primary transition-smooth">Services</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-foreground/70 hover:text-primary transition-smooth">Contact</button></li>
             </ul>
           </div>
         </div>

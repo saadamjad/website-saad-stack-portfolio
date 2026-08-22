@@ -13,19 +13,15 @@ const AboutSection = () => {
             </p>
             
             <p>
-              At Washmen, I work as a Full-Stack Engineer, building and maintaining mobile and web applications using React and React Native. I’ve also developed PWAs that deliver near-native experiences for partners like Careem, InstaShop, and RIZEK — serving over 1 million active users with real-time order flows and seamless payment integrations.
+              I'm currently a Founding Engineer at ZIZKA AI, building ZizkaDB — an open-source operational database designed for AI agents. Before that, I spent nearly three years at Washmen as a Full-Stack Engineer, building and maintaining mobile and web applications using React and React Native, and developing PWAs that deliver near-native experiences for partners like Careem, InstaShop, and RIZEK — serving over 1 million active users with real-time order flows and seamless payment integrations.
             </p>
-            
+
             <p>
               Alongside mobile, I build scalable backend systems using Node.js and Sails.js — designing efficient APIs, microservices, and AWS Lambda integrations that power production-grade applications.
             </p>
-            
-            <p>
-              Whether it's mobile development with React Native, web applications with React, or backend services with Node.js and cloud infrastructure. 
 
             <p>
-              I focus on writing clean, maintainable code that stands the test of time
-            </p>
+              Whether it's mobile development with React Native, web applications with React, or backend services with Node.js and cloud infrastructure, I focus on writing clean, maintainable code that stands the test of time.
             </p>
           </div>
         </div>

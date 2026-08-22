@@ -4,20 +4,70 @@ import { Briefcase, Code2 } from 'lucide-react';
 const ExperienceSection = () => {
   const experiences = [
     {
-      period: '2023 - Present',
-      role: 'Senior React Native & Full-Stack Engineer',
-      company: 'Washmen, Dubai',
-      description: 'Leading development for 1M+ user apps (Careem, InstaShop, RIZEK). Architecting scalable microservices and optimizing mobile performance.',
+      period: 'Jun 2026 - Present',
+      role: 'Founding Engineer',
+      company: 'ZIZKA AI, Remote',
+      description: 'Building ZizkaDB, an open-source operational database designed for AI agents. Architecting both frontend and backend systems as a founding engineer.',
       icon: Briefcase,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
       borderColor: 'border-primary/30'
     },
     {
-      period: '2018 - 2022',
+      period: 'Sep 2023 - Jul 2026',
+      role: 'Software Engineer, Customer App',
+      company: 'Washmen, Dubai',
+      description: 'Delivered end-to-end features for 1M+ user apps (Careem, InstaShop). Designed scalable microservices with AWS Lambda, SQS, and SNS, and optimized mobile performance.',
+      icon: Briefcase,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30'
+    },
+    {
+      period: 'Mar 2023 - Aug 2023',
+      role: 'React Native Engineer (Contract)',
+      company: 'TekRevol, Remote',
+      description: 'Delivered mobile features for Android & iOS using React Native, TypeScript, and JavaScript on scalable, production-grade apps.',
+      icon: Briefcase,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30'
+    },
+    {
+      period: 'Jan 2022 - Apr 2023',
+      role: 'Software Engineer, React Native & React.js',
+      company: 'Retailo Technologies, Riyadh',
+      description: 'Built frontend features for a B2B marketplace startup across the MENAP region, implementing APIs, Redux, and admin panels.',
+      icon: Briefcase,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30'
+    },
+    {
+      period: 'Jan 2020 - Jan 2022',
+      role: 'Software Engineer / React Native Developer',
+      company: 'Hao Saudi, Riyadh',
+      description: 'Owned the full product lifecycle from MVP to App Store and Google Play release. Maintained a 99.2% crash-free session rate over 2+ years.',
+      icon: Briefcase,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30'
+    },
+    {
+      period: 'Jan 2020 - Jan 2022',
+      role: 'Software Engineer, React Native & React.js',
+      company: 'Sitgo Travels, Karachi',
+      description: 'Developed mobile and web features for an intercity ride-booking app using React Native (Expo & CLI) and TypeScript.',
+      icon: Briefcase,
+      color: 'text-primary',
+      bgColor: 'bg-primary/10',
+      borderColor: 'border-primary/30'
+    },
+    {
+      period: 'Jan 2019 - Dec 2020',
       role: 'Freelance React Native Developer',
       company: 'Fiverr / Upwork',
-      description: 'Built 10+ apps for international clients. Specialized in cross-platform mobile development, API integrations, and UI/UX implementation.',
+      description: 'Delivered custom React Native mobile apps for diverse international clients as a Level 1 seller, gaining experience across multiple industries.',
       icon: Code2,
       color: 'text-accent',
       bgColor: 'bg-accent/10',
@@ -41,7 +91,7 @@ const ExperienceSection = () => {
               <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-background ${exp.bgColor} ${exp.color} shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-smooth group-hover:scale-110`}>
                 <exp.icon className="w-4 h-4" />
               </div>
-              
+
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-smooth hover:shadow-premium-lg">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 gap-2">
                   <h3 className="font-bold text-xl text-foreground">{exp.role}</h3>

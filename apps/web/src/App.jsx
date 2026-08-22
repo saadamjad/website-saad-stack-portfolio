@@ -9,12 +9,13 @@ import ContactSection from '@/sections/ContactSection.jsx';
 import ExperienceSection from '@/sections/ExperienceSection.jsx';
 import HeroSection from '@/sections/HeroSection.jsx';
 import PortfolioSection from '@/sections/PortfolioSection.jsx';
+import ReviewsSection from '@/sections/ReviewsSection.jsx';
 import ServicesSection from '@/sections/ServicesSection.jsx';
 import TechStackSection from '@/sections/TechStackSection.jsx';
 import { Helmet } from 'react-helmet';
 
 function App() {
-  const sectionIds = ['hero', 'about', 'experience', 'tech-stack', 'services', 'work', 'video', 'reviews', 'faq', 'contact'];
+  const sectionIds = ['hero', 'about', 'experience', 'tech-stack', 'services', 'work', 'reviews', 'contact'];
   const { activeSection, scrollToSection } = useScrollNavigation(sectionIds);
 
   return (
@@ -38,10 +39,11 @@ function App() {
           <ServicesSection />
           <PortfolioSection />
           <ClientsSection />
+          <ReviewsSection />
           <ContactSection />
         </main>
 
-        <Footer />
+        <Footer scrollToSection={scrollToSection} />
         <ChatWidget />
         <Toaster />
       </div>
