@@ -7,6 +7,11 @@ The AI chat agent that powers the site's chat widget lives in a separate reposit
 + CrewAI) and is deployed independently. This repo only owns the site itself and the
 chat widget's UI — see `apps/web/src/features/chat/`.
 
+PocketBase (`apps/pocketbase`) is still used, but only for two narrow features: the
+contact form (`contact_submissions` collection) and an internal video-upload admin tool
+(`videos` collection, gated behind authentication) — it no longer has anything to do
+with the chat agent.
+
 ## Local development
 
 ```bash
