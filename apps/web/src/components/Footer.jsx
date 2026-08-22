@@ -43,12 +43,6 @@ const Footer = ({ scrollToSection }) => {
                 </a>
               </li>
               <li>
-                <a href="mailto:saad.amjad434@gmail.com" className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-smooth group">
-                  <Mail className="w-4 h-4 group-hover:text-accent" />
-                  saad.amjad434@gmail.com
-                </a>
-              </li>
-              <li>
                 <a href="mailto:contact@saadstack.com" className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-smooth group">
                   <Mail className="w-4 h-4 group-hover:text-accent" />
                   contact@saadstack.com

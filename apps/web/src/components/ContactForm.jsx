@@ -74,7 +74,7 @@ const ContactForm = () => {
       console.error('Error submitting form:', error);
       toast({
         title: 'Failed to send message',
-        description: 'Please try again or email me directly.',
+        description: 'Please try again or email contact@saadstack.com.',
         variant: 'destructive'
       });
     } finally {

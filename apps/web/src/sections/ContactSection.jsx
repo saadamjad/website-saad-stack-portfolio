@@ -40,16 +40,9 @@ const ContactSection = () => {
                     <Mail className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/70 mb-1">Primary Email</p>
-                    <a 
-                      href="mailto:saad.amjad434@gmail.com" 
-                      className="text-lg font-medium text-foreground hover:text-accent transition-smooth block mb-1"
-                    >
-                      saad.amjad434@gmail.com
-                    </a>
-                    <p className="text-sm text-foreground/70 mb-1 mt-3">Secondary Email</p>
-                    <a 
-                      href="mailto:contact@saadstack.com" 
+                    <p className="text-sm text-foreground/70 mb-1">Email</p>
+                    <a
+                      href="mailto:contact@saadstack.com"
                       className="text-lg font-medium text-foreground hover:text-accent transition-smooth block"
                     >
                       contact@saadstack.com
