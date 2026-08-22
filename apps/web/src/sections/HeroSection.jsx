@@ -44,14 +44,14 @@ const HeroSection = ({
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
-            <Button asChild size="lg" variant="outline" className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
+            <Button asChild size="lg" className="border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8">
               <a href="https://www.linkedin.com/in/saad-amjad-0b398116b/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 w-5 h-5" />
                 LinkedIn
               </a>
             </Button>
 
-            <Button asChild size="lg" variant="outline" className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
+            <Button asChild size="lg" className="border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8">
               <a href="https://github.com/saadamjad" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 w-5 h-5" />
                 View GitHub

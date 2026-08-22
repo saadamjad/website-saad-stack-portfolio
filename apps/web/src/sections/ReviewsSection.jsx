@@ -22,12 +22,17 @@ const ReviewsSection = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="block rounded-2xl border border-border/60 bg-white p-3 sm:p-5 shadow-premium-xl hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          aria-label="Open Saad's Upwork work history"
+          aria-label="Open Saad's Upwork profile"
         >
+          <img
+            src="/reviews/upwork-profile-header.jpg"
+            alt="Saad A. on Upwork — verified, Karachi, available now"
+            className="w-full h-auto rounded-lg"
+          />
           <img
             src="/reviews/upwork-work-history.jpg"
             alt="Upwork work history with a 5.0 client review and completed-job insights"
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-3"
           />
         </a>
 
