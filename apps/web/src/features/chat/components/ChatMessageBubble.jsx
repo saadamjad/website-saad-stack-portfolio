@@ -1,5 +1,33 @@
 import { cn } from '@/lib/utils';
-import { memo, useEffect, useRef, useState } from 'react';
+import { Fragment, memo, useEffect, useRef, useState } from 'react';
+
+const URL_PATTERN = /(https?:\/\/[^\s]+)/g;
+
+// Chat replies are plain text (no markdown rendering), but URLs should still be
+// clickable rather than inert text — this splits on URLs and wraps just those
+// segments in real anchors, leaving everything else as plain text.
+//
+// text.split() with a capturing group alternates: [text, match, text, match, ...],
+// so odd indices are always the captured URLs — no need to re-test each part
+// (re-testing with a global regex's stateful .test() would misfire anyway).
+function linkifyText(text) {
+  const parts = text.split(URL_PATTERN);
+  return parts.map((part, index) =>
+    index % 2 === 1 ? (
+      <a
+        key={index}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-2 hover:text-primary break-all"
+      >
+        {part}
+      </a>
+    ) : (
+      <Fragment key={index}>{part}</Fragment>
+    )
+  );
+}
 
 // Backend responses are fully buffered (no real token streaming — see chat
 // architecture notes), so this reveals the finished reply progressively on
@@ -47,7 +75,7 @@ function ChatMessageBubble({ role, content, status, simulated, animate }) {
           status === 'error' && 'border-destructive/50 text-destructive-foreground bg-destructive/10'
         )}
       >
-        {displayedContent}
+        {linkifyText(displayedContent)}
         {!isUser && simulated && (
           <div className="mt-1.5 text-[10px] uppercase tracking-wide text-muted-foreground/70">
             Limited mode — smart assistant unavailable
