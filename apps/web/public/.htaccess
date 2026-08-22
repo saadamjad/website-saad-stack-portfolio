@@ -8,7 +8,13 @@
 
 <IfModule mod_headers.c>
 	Header set X-Content-Type-Options "nosniff"
-	Header set Referrer-Policy "no-referrer-when-downgrade"
+	Header set X-Frame-Options "DENY"
+	Header set Referrer-Policy "strict-origin-when-cross-origin"
+	Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+	# Real browser protections. Right-click / Inspect / View Source cannot be
+	# blocked — the page is already on the visitor's machine. CSP limits what
+	# scripts and frames can do if something unexpected is injected.
+	Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https:; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
 
 	# Cache everything on CDN by default
 	Header set Cache-Control "public, s-maxage=604800, max-age=0"
