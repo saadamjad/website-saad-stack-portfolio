@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Mail } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 import ParticleBackground from '@/components/ParticleBackground.jsx';
 const HeroSection = ({
   scrollToSection
@@ -44,9 +44,11 @@ const HeroSection = ({
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
-            <Button size="lg" variant="outline" onClick={() => scrollToSection('contact')} className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
-              <Mail className="mr-2 w-5 h-5" />
-              Contact me
+            <Button asChild size="lg" variant="outline" className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">
+              <a href="https://www.linkedin.com/in/saad-amjad-0b398116b/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="mr-2 w-5 h-5" />
+                LinkedIn
+              </a>
             </Button>
 
             <Button asChild size="lg" variant="outline" className="border-border/50 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] text-lg px-8">

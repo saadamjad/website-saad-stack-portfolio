@@ -6,7 +6,7 @@ import chatConfig from '@/features/chat/config/chatConfig';
 import { useAutoScroll } from '@/features/chat/hooks/useAutoScroll';
 import { useChatMessages } from '@/features/chat/hooks/useChatMessages';
 import { useChatSession } from '@/features/chat/hooks/useChatSession';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 function wasDismissedThisSession() {
@@ -91,10 +91,14 @@ export default function ChatWidget() {
         <Button
           type="button"
           onClick={() => setOpen(true)}
-          className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg shadow-primary/30 bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-transform"
+          className="fixed bottom-6 right-6 z-50 h-14 w-14 overflow-hidden rounded-full border-2 border-primary/70 p-0 shadow-lg shadow-primary/30 hover:scale-105 transition-transform"
           aria-label="Open chat assistant"
         >
-          <MessageCircle className="w-6 h-6" />
+          <img
+            src={chatConfig.avatarUrl}
+            alt=""
+            className="h-full w-full object-cover"
+          />
         </Button>
       )}
 
@@ -112,16 +116,29 @@ export default function ChatWidget() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="chat-widget-heading"
-            className="fixed z-50 flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-background shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-200 bottom-6 right-6 w-[min(380px,calc(100vw-3rem))] h-[min(560px,70vh)] max-sm:bottom-4 max-sm:right-4 max-sm:h-[min(520px,65vh)]"
+            className="chat-panel fixed z-50 flex flex-col overflow-hidden rounded-2xl border animate-in fade-in slide-in-from-bottom-4 duration-200 bottom-6 right-6 w-[min(380px,calc(100vw-3rem))] h-[min(560px,70vh)] max-sm:bottom-4 max-sm:right-4 max-sm:h-[min(520px,65vh)]"
           >
-            <header className="flex shrink-0 items-start justify-between gap-2 border-b border-border/60 px-4 py-3">
-              <div className="min-w-0 pr-2">
-                <h2 id="chat-widget-heading" className="text-base font-semibold text-left leading-tight">
-                  {chatConfig.agentDisplayName}
-                </h2>
-                <p className="text-xs text-muted-foreground text-left font-normal mt-0.5">
-                  Education · career · projects · HR &amp; interview info
-                </p>
+            <header className="chat-panel-header flex shrink-0 items-start justify-between gap-2 border-b px-4 py-3">
+              <div className="flex min-w-0 items-start gap-3 pr-2">
+                <span className="relative mt-0.5 h-9 w-9 shrink-0">
+                  <img
+                    src={chatConfig.avatarUrl}
+                    alt=""
+                    className="h-9 w-9 rounded-full object-cover ring-2 ring-primary/45"
+                  />
+                  <span
+                    className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-primary ring-2 ring-[hsl(222_36%_10%)]"
+                    aria-hidden="true"
+                  />
+                </span>
+                <div className="min-w-0">
+                  <h2 id="chat-widget-heading" className="text-base font-semibold text-left leading-tight">
+                    {chatConfig.agentDisplayName}
+                  </h2>
+                  <p className="text-xs text-muted-foreground text-left font-normal mt-0.5">
+                    {chatConfig.agentSubtitle}
+                  </p>
+                </div>
               </div>
               <Button
                 type="button"

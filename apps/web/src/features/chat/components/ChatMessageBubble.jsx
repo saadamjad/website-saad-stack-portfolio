@@ -95,7 +95,7 @@ function ChatMessageBubble({ role, content, status, simulated, animate }) {
           'max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed',
           isUser
             ? 'bg-primary text-primary-foreground rounded-br-md'
-            : 'bg-card border border-border/60 text-foreground rounded-bl-md',
+            : 'chat-bubble-assistant border text-foreground rounded-bl-md',
           status === 'error' && 'border-destructive/50 text-destructive-foreground bg-destructive/10'
         )}
       >

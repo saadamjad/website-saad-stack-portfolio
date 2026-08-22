@@ -23,7 +23,7 @@ const ChatInput = forwardRef(function ChatInput({ onSend, disabled, isLoading },
   return (
     <form
       onSubmit={handleSubmit}
-      className="border-t border-border/60 p-3 bg-background/95 backdrop-blur shrink-0"
+      className="chat-composer border-t p-3 backdrop-blur shrink-0"
     >
       <div className="flex gap-2 items-end">
         <Textarea

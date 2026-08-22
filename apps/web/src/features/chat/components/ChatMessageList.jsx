@@ -4,7 +4,7 @@ import ChatTypingIndicator from '@/features/chat/components/ChatTypingIndicator'
 export default function ChatMessageList({ messages, isLoading, bottomRef, isHydrating }) {
   return (
     <div
-      className="flex-1 overflow-y-auto overscroll-y-contain px-4 py-3 space-y-3 min-h-0"
+      className="chat-transcript flex-1 overflow-y-auto overscroll-y-contain px-4 py-3 space-y-3 min-h-0"
       role="log"
       aria-live="polite"
       aria-relevant="additions"
