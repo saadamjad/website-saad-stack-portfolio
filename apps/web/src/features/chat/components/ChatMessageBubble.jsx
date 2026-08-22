@@ -1,32 +1,56 @@
 import { cn } from '@/lib/utils';
 import { Fragment, memo, useEffect, useRef, useState } from 'react';
 
-const URL_PATTERN = /(https?:\/\/[^\s]+)/g;
+const URL_PATTERN = /https?:\/\/[^\s]+/g;
+// Sentence punctuation that commonly follows a URL with no space before it
+// ("...see https://saadstack.com.") — [^\s]+ above has no way to know where
+// the URL actually ends, so it swallows this into the match. Stripped back
+// out of the link and re-attached as plain text after it.
+const TRAILING_PUNCTUATION = /[).,;:!?'"\]}]+$/;
 
 // Chat replies are plain text (no markdown rendering), but URLs should still be
-// clickable rather than inert text — this splits on URLs and wraps just those
-// segments in real anchors, leaving everything else as plain text.
-//
-// text.split() with a capturing group alternates: [text, match, text, match, ...],
-// so odd indices are always the captured URLs — no need to re-test each part
-// (re-testing with a global regex's stateful .test() would misfire anyway).
+// clickable rather than inert text — this finds URLs and wraps just those
+// segments in real anchors, leaving everything else (including any trailing
+// punctuation trimmed off a match) as plain text.
 function linkifyText(text) {
-  const parts = text.split(URL_PATTERN);
-  return parts.map((part, index) =>
-    index % 2 === 1 ? (
+  const nodes = [];
+  let lastIndex = 0;
+  let key = 0;
+
+  for (const match of text.matchAll(URL_PATTERN)) {
+    let url = match[0];
+    const trailingMatch = url.match(TRAILING_PUNCTUATION);
+    const trailing = trailingMatch ? trailingMatch[0] : '';
+    if (trailing) {
+      url = url.slice(0, url.length - trailing.length);
+    }
+    if (!url) continue; // whole "match" was punctuation — nothing to link
+
+    if (match.index > lastIndex) {
+      nodes.push(<Fragment key={key++}>{text.slice(lastIndex, match.index)}</Fragment>);
+    }
+    nodes.push(
       <a
-        key={index}
-        href={part}
+        key={key++}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
         className="underline underline-offset-2 hover:text-primary break-all"
       >
-        {part}
+        {url}
       </a>
-    ) : (
-      <Fragment key={index}>{part}</Fragment>
-    )
-  );
+    );
+    if (trailing) {
+      nodes.push(<Fragment key={key++}>{trailing}</Fragment>);
+    }
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(<Fragment key={key++}>{text.slice(lastIndex)}</Fragment>);
+  }
+
+  return nodes;
 }
 
 // Backend responses are fully buffered (no real token streaming — see chat
