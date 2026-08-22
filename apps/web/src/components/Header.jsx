@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Twitter, Facebook, MessageCircle } from 'lucide-react';
+import { Menu, X, Github, Linkedin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const Header = ({
   activeSection,
@@ -20,9 +20,6 @@ const Header = ({
     id: 'work',
     label: 'Work'
   }, {
-    id: 'video',
-    label: 'Video'
-  }, {
     id: 'reviews',
     label: 'Reviews'
   }, {
@@ -37,14 +34,6 @@ const Header = ({
     icon: Linkedin,
     href: 'https://www.linkedin.com/in/saad-amjad-0b398116b/',
     label: 'LinkedIn'
-  }, {
-    icon: Twitter,
-    href: 'https://twitter.com',
-    label: 'Twitter'
-  }, {
-    icon: Facebook,
-    href: 'https://facebook.com',
-    label: 'Facebook'
   }, {
     icon: MessageCircle,
     href: 'https://wa.me/923362065663',
@@ -80,13 +69,21 @@ const Header = ({
               </a>)}
           </div>
 
-          <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-menu"
+          >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>
         </div>
       </div>
 
-      {isMobileMenuOpen && <div className="lg:hidden bg-background/98 backdrop-blur-md border-t border-border/50">
+      {isMobileMenuOpen && <div id="mobile-nav-menu" className="lg:hidden bg-background/98 backdrop-blur-md border-t border-border/50">
           <nav className="px-4 py-4 space-y-2">
             {navItems.map(item => <button key={item.id} onClick={() => handleNavClick(item.id)} className={`block w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-smooth ${activeSection === item.id ? 'text-primary bg-primary/10' : 'text-foreground/70 hover:text-foreground hover:bg-muted/50'}`}>
                 {item.label}

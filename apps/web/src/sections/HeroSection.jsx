@@ -8,13 +8,13 @@ const HeroSection = ({
   return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1671377971962-762c386d3194)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1671377971962-762c386d3194?w=1600&q=60&auto=format&fit=crop)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         filter: 'blur(8px)'
       }} />
         <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'url(https://images.unsplash.com/photo-1690509616470-25f1608a3adc)',
+        backgroundImage: 'url(https://images.unsplash.com/photo-1690509616470-25f1608a3adc?w=1600&q=60&auto=format&fit=crop)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         filter: 'blur(8px)',

@@ -5,15 +5,15 @@ const PortfolioSection = () => {
   const projects = [
     {
       title: 'Washmen Dubai',
-      description: 'Washmen is the UAE leading app- based laundry, dry cleaning, ShoeCare, and Bag Care service.Book pickup in minutes and enjoy fast, professional laundry.',
+      description: 'Washmen is the UAE\'s leading app-based laundry, dry cleaning, ShoeCare, and Bag Care service. Book pickup in minutes and enjoy fast, professional laundry.',
       techStack: ['React Native', 'Sails.js', 'AWS Lambda', 'SQS', 'SNS'],
       impact: 'https://apps.apple.com/pk/app/washmen-the-finery/id1037965236'
     },
     {
       title: 'PWA Careem',
       description: 'Built PWA integration enabling order placement and payments within Careem.',
-      techStack: ['React Native', 'Sail.js', 'AWS', 'Redis'],
-      impact: 'https://careem-washmen.com'
+      techStack: ['React Native', 'Sails.js', 'AWS', 'Redis'],
+      impact: 'https://careem.washmen.com'
     },
     {
       title: 'Retailo B2B Marketplace — KSA & UAE startup',

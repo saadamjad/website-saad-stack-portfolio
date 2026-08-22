@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { ExternalLink } from 'lucide-react';
 
 const ProjectCard = ({ title, description, techStack, impact }) => {
   return (
@@ -27,7 +28,15 @@ const ProjectCard = ({ title, description, techStack, impact }) => {
         </div>
         {impact && (
           <div className="mt-auto pt-4 border-t border-border/50">
-            <p className="text-sm font-semibold text-primary">{impact}</p>
+            <a
+              href={impact}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+            >
+              View project
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         )}
       </CardContent>
