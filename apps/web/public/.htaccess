@@ -13,8 +13,19 @@
 	# Cache everything on CDN by default
 	Header set Cache-Control "public, s-maxage=604800, max-age=0"
 
-	# Cache in browser all assets
+	# Cache in browser all assets — safe to cache long since Vite gives every
+	# build a unique content-hashed filename (index-XXXXXXXX.js/.css).
 	<If "%{REQUEST_URI} =~ m#^/assets/.*$#">
 		Header set Cache-Control "public, max-age=604800"
+	</If>
+
+	# index.html (and anything the SPA fallback rewrite serves) must NEVER be
+	# cached by the CDN/browser. It's the one file whose name never changes
+	# between deploys, so a stale cached copy keeps referencing asset hashes
+	# from a previous build that no longer exist on disk — the browser then
+	# gets a 200 HTML response for a .js/.css request (this exact bug: "server
+	# responded with a MIME type of text/html"). Every visit must fetch fresh.
+	<If "%{REQUEST_URI} !~ m#^/assets/.*$#">
+		Header set Cache-Control "no-cache, must-revalidate"
 	</If>
 </IfModule>
