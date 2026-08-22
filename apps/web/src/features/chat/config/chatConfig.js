@@ -6,7 +6,7 @@ export default {
   historyLimit: 20,
   placeholder: "Ask about experience, projects, or hiring…",
   welcomeMessage:
-    "I can answer questions about Saad's experience, the work he's shipped, and how to get in touch.",
+    "Hi — I'm Saad's personal assistant. I can tell you about his experience, the work he's shipped, and how to get in touch. Ask anything you're curious about.",
   agentDisplayName: "Saad's Assistant",
   agentSubtitle: "Experience, projects, and hiring",
   avatarUrl: '/saad-assistant.jpg',
