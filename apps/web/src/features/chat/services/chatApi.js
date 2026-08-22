@@ -1,26 +1,48 @@
 import chatConfig from '@/features/chat/config/chatConfig';
 
+const REQUEST_TIMEOUT_MS = 30000;
+
 function formatApiError(detail, fallback) {
   if (typeof detail === 'string') return detail;
   if (detail && typeof detail === 'object' && detail.error) return detail.error;
   return fallback;
 }
 
+async function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      throw new Error('Request timed out — please try again.');
+    }
+    throw err;
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 async function parseJson(res) {
-  const data = await res.json().catch(() => ({}));
+  let data;
+  let parseFailed = false;
+  try {
+    data = await res.json();
+  } catch {
+    parseFailed = true;
+    data = {};
+  }
   if (!res.ok) {
     throw new Error(formatApiError(data.error || data.detail, `Request failed (${res.status})`));
+  }
+  if (parseFailed) {
+    throw new Error('Received an invalid response from the server.');
   }
   return data;
 }
 
-export async function fetchChatHealth() {
-  const res = await fetch(`${chatConfig.apiBase}/health`);
-  return parseJson(res);
-}
-
 export async function sendChatMessage(sessionId, message) {
-  const res = await fetch(chatConfig.apiBase, {
+  const res = await fetchWithTimeout(chatConfig.apiBase, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ sessionId, message }),
@@ -33,6 +55,6 @@ export async function fetchChatHistory(sessionId) {
     sessionId,
     limit: String(chatConfig.historyLimit),
   });
-  const res = await fetch(`${chatConfig.apiBase}/history?${params}`);
+  const res = await fetchWithTimeout(`${chatConfig.apiBase}/history?${params}`);
   return parseJson(res);
 }

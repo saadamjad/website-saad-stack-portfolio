@@ -1,4 +1,4 @@
-const API_BASE = '/hcgi/platform/chat';
+const API_BASE = import.meta.env.VITE_CHAT_API_BASE || '/hcgi/platform/chat';
 
 export default {
   apiBase: API_BASE,
@@ -6,7 +6,7 @@ export default {
   historyLimit: 20,
   placeholder: "Ask about Saad's education, career, projects, hobbies, travel, or hiring…",
   welcomeMessage:
-    "Hello! I'm Saad's personal representative — here for visitors, recruiters, and interviewers. Ask about his education, career timeline, projects, skills, hobbies, countries visited, or how to get in touch.",
+    "Welcome! I'm an AI assistant that can answer questions about Saad's professional background, experience, projects, technical expertise, and how to connect with him.",
   agentDisplayName: "Saad's Representative",
   sessionStorageKey: 'portfolio_chat_session_id',
   panelDismissedKey: 'portfolio_chat_panel_dismissed',

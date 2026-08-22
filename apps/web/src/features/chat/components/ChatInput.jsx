@@ -2,9 +2,9 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import chatConfig from '@/features/chat/config/chatConfig';
 import { Loader2, Send } from 'lucide-react';
-import { useState } from 'react';
+import { forwardRef, useState } from 'react';
 
-export default function ChatInput({ onSend, disabled, isLoading }) {
+const ChatInput = forwardRef(function ChatInput({ onSend, disabled, isLoading }, ref) {
   const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
@@ -16,7 +16,6 @@ export default function ChatInput({ onSend, disabled, isLoading }) {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
       handleSubmit(e);
     }
   };
@@ -28,6 +27,7 @@ export default function ChatInput({ onSend, disabled, isLoading }) {
     >
       <div className="flex gap-2 items-end">
         <Textarea
+          ref={ref}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -54,4 +54,6 @@ export default function ChatInput({ onSend, disabled, isLoading }) {
       </div>
     </form>
   );
-}
+});
+
+export default ChatInput;

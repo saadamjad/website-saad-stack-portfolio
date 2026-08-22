@@ -15,12 +15,19 @@ function createSessionId() {
 export function useChatSession() {
   const sessionId = useMemo(() => {
     if (typeof window === 'undefined') return '';
-    let id = sessionStorage.getItem(chatConfig.sessionStorageKey);
-    if (!id) {
-      id = createSessionId();
-      sessionStorage.setItem(chatConfig.sessionStorageKey, id);
+    // sessionStorage can throw in private browsing / storage-disabled
+    // contexts (Safari private mode, some locked-down browsers) — fall back
+    // to a fresh in-memory-only id rather than crashing the hook on mount.
+    try {
+      let id = sessionStorage.getItem(chatConfig.sessionStorageKey);
+      if (!id) {
+        id = createSessionId();
+        sessionStorage.setItem(chatConfig.sessionStorageKey, id);
+      }
+      return id;
+    } catch {
+      return createSessionId();
     }
-    return id;
   }, []);
 
   return { sessionId };
