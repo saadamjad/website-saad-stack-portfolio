@@ -11,7 +11,10 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    // Honeypot: real users never see or fill this field (visually hidden +
+    // removed from tab order); bots that blindly fill every input do.
+    website: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
@@ -45,6 +48,12 @@ const ContactForm = () => {
       return;
     }
 
+    // Honeypot tripped — silently pretend success without ever hitting the API.
+    if (formData.website) {
+      setFormData({ name: '', email: '', message: '', website: '' });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -59,7 +68,7 @@ const ContactForm = () => {
         description: 'Thank you for reaching out. I\'ll get back to you soon.'
       });
 
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', website: '' });
       setErrors({});
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -83,6 +92,19 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={handleChange}
+        />
+      </div>
+
       <div>
         <Label htmlFor="name" className="text-foreground/90">Name</Label>
         <Input
@@ -93,9 +115,11 @@ const ContactForm = () => {
           onChange={handleChange}
           className="mt-2 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
           placeholder="Your name"
+          aria-invalid={!!errors.name}
+          aria-describedby={errors.name ? 'name-error' : undefined}
         />
         {errors.name && (
-          <p className="text-sm text-destructive mt-1">{errors.name}</p>
+          <p id="name-error" className="text-sm text-destructive mt-1">{errors.name}</p>
         )}
       </div>
 
@@ -109,9 +133,11 @@ const ContactForm = () => {
           onChange={handleChange}
           className="mt-2 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground"
           placeholder="your.email@example.com"
+          aria-invalid={!!errors.email}
+          aria-describedby={errors.email ? 'email-error' : undefined}
         />
         {errors.email && (
-          <p className="text-sm text-destructive mt-1">{errors.email}</p>
+          <p id="email-error" className="text-sm text-destructive mt-1">{errors.email}</p>
         )}
       </div>
 
@@ -125,9 +151,11 @@ const ContactForm = () => {
           rows={5}
           className="mt-2 bg-card/50 border-border/50 focus:border-primary text-foreground placeholder:text-muted-foreground resize-none"
           placeholder="Tell me about your project..."
+          aria-invalid={!!errors.message}
+          aria-describedby={errors.message ? 'message-error' : undefined}
         />
         {errors.message && (
-          <p className="text-sm text-destructive mt-1">{errors.message}</p>
+          <p id="message-error" className="text-sm text-destructive mt-1">{errors.message}</p>
         )}
       </div>
 
