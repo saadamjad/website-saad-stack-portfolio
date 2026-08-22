@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
 const UPWORK_PROFILE = 'https://www.upwork.com/freelancers/~01c06b62a204fa';
+const FIVERR_PROFILE = 'https://www.fiverr.com/saadamjad365';
 
 const ReviewsSection = () => {
   return (
@@ -36,14 +37,24 @@ const ReviewsSection = () => {
           />
         </a>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 transition-smooth hover:shadow-premium-lg active:scale-[0.98]"
             asChild
           >
             <a href={UPWORK_PROFILE} target="_blank" rel="noopener noreferrer">
-              View full profile on Upwork
+              View Upwork profile
+              <ExternalLink className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            className="border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-smooth hover:shadow-premium-lg active:scale-[0.98]"
+            asChild
+          >
+            <a href={FIVERR_PROFILE} target="_blank" rel="noopener noreferrer">
+              View Fiverr profile
               <ExternalLink className="ml-2 w-5 h-5" />
             </a>
           </Button>
