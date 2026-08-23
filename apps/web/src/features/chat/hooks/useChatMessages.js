@@ -1,5 +1,6 @@
 import chatConfig from '@/features/chat/config/chatConfig';
 import { fetchChatHistory, sendChatMessage } from '@/features/chat/services/chatApi';
+import { trackEvent } from '@/lib/analytics';
 import { useCallback, useEffect, useState } from 'react';
 
 function makeId(prefix) {
@@ -68,6 +69,7 @@ export function useChatMessages(sessionId) {
       };
       setMessages((prev) => [...prev, userMsg]);
       setIsLoading(true);
+      trackEvent('chat_message_sent');
 
       try {
         const data = await sendChatMessage(sessionId, trimmed);

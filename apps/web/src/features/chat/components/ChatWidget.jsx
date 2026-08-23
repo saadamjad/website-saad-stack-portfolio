@@ -6,6 +6,7 @@ import chatConfig from '@/features/chat/config/chatConfig';
 import { useAutoScroll } from '@/features/chat/hooks/useAutoScroll';
 import { useChatMessages } from '@/features/chat/hooks/useChatMessages';
 import { useChatSession } from '@/features/chat/hooks/useChatSession';
+import { trackEvent } from '@/lib/analytics';
 import { X } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -42,7 +43,10 @@ export default function ChatWidget() {
 
   useEffect(() => {
     if (!chatConfig.openOnLoad || wasDismissedThisSession()) return;
-    const timer = window.setTimeout(() => setOpen(true), chatConfig.openDelayMs ?? 500);
+    const timer = window.setTimeout(() => {
+      trackEvent('chat_auto_opened');
+      setOpen(true);
+    }, chatConfig.openDelayMs ?? 500);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -90,7 +94,10 @@ export default function ChatWidget() {
       {!open && (
         <Button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            trackEvent('chat_opened');
+            setOpen(true);
+          }}
           className="fixed bottom-6 right-6 z-50 h-14 w-14 overflow-hidden rounded-full border-2 border-primary/70 p-0 shadow-lg shadow-primary/30 hover:scale-105 transition-transform"
           aria-label="Open chat assistant"
         >
