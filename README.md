@@ -3,7 +3,7 @@
 Saad's portfolio — React (Vite) + PocketBase.
 
 The AI chat agent that powers the site's chat widget lives in a separate repository
-([Personal-AI-Agent](https://github.com/saadamjad/Personal-AI-Agent), Python + FastAPI
+([personal-assistant](https://github.com/saadamjad/personal-assistant), Python + FastAPI
 + CrewAI) and is deployed independently. This repo only owns the site itself and the
 chat widget's UI — see `apps/web/src/features/chat/`.
 
