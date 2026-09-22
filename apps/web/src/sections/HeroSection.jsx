@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download, FileText, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 import ParticleBackground from '@/components/ParticleBackground.jsx';
 const HeroSection = ({
   scrollToSection
@@ -44,20 +44,6 @@ const HeroSection = ({
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             
-            <div className="flex items-stretch gap-2">
-              <Button asChild size="lg" className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
-                <a href="/resume-saad-amjad.pdf" target="_blank" rel="noopener noreferrer">
-                  <FileText className="mr-2 w-5 h-5" />
-                  View Resume
-                </a>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="h-12 w-12 shrink-0 border-2 border-primary px-0 hover:bg-primary hover:text-primary-foreground transition-all duration-300 active:scale-[0.98]" aria-label="Download resume as PDF">
-                <a href="/resume-saad-amjad.pdf" download="Saad-Amjad-Resume.pdf">
-                  <Download className="w-5 h-5" />
-                </a>
-              </Button>
-            </div>
-
             <Button asChild size="lg" className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               <a href="https://www.linkedin.com/in/saad-amjad-0b398116b/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 w-5 h-5" />
