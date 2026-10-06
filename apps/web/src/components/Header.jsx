@@ -2,33 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, MessageCircle, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 const Header = ({
+  sectionIds,
   activeSection,
   scrollToSection
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navItems = [{
-    id: 'hero',
-    label: 'Home'
-  }, {
-    id: 'about',
-    label: 'About'
-  }, {
-    id: 'experience',
-    label: 'Experience'
-  }, {
-    id: 'tech-stack',
-    label: 'Tech Stack'
-  }, {
-    id: 'work',
-    label: 'Work'
-  }, {
-    id: 'reviews',
-    label: 'Reviews'
-  }, {
-    id: 'contact',
-    label: 'Contact'
-  }];
+  const navItems = [
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'ai', label: 'AI' },
+    { id: 'work', label: 'Work' },
+    { id: 'open-source', label: 'Open Source' },
+    { id: 'writing', label: 'Writing' },
+    { id: 'reviews', label: 'Reviews' },
+    { id: 'contact', label: 'Contact' },
+  ].filter(item => sectionIds.includes(item.id));
   const socialLinks = [{
     icon: Github,
     href: 'https://github.com/saadamjad',

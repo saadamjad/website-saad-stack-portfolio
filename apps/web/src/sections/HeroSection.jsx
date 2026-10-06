@@ -1,9 +1,15 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Play } from 'lucide-react';
 import ParticleBackground from '@/components/ParticleBackground.jsx';
+const stats = [
+  { value: '7+', label: 'years shipping' },
+  { value: '1M+', label: 'users served' },
+  { value: '6', label: 'production apps' },
+];
 const HeroSection = ({
-  scrollToSection
+  scrollToSection,
+  hasIntro
 }) => {
   return <section id="hero" className="relative min-h-[100svh] scroll-mt-20 flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -26,6 +32,10 @@ const HeroSection = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
         <div className="animate-fade-in">
+          <p className="inline-flex flex-wrap items-center justify-center gap-x-2 px-4 py-1.5 mb-6 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-foreground/90">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            M. Saad Amjad · Founding Engineer @ ZIZKA AI
+          </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" style={{
           letterSpacing: '-0.02em'
         }}>
@@ -35,14 +45,27 @@ const HeroSection = ({
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Senior full-stack engineer with 7 years of experience building high-performance applications
+            Senior full-stack engineer building high-performance mobile apps, distributed backends and AI agent infrastructure
           </p>
+
+          <dl className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-10">
+            {stats.map(stat => <div key={stat.label} className="text-center">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="text-3xl font-bold text-primary">{stat.value}</dd>
+                <dd className="text-sm text-foreground/60">{stat.label}</dd>
+              </div>)}
+          </dl>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4">
             <Button size="lg" onClick={() => scrollToSection('work')} className="h-12 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               View work
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
+
+            {hasIntro && <Button size="lg" onClick={() => scrollToSection('intro')} className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
+                <Play className="mr-2 w-5 h-5" />
+                Watch intro
+              </Button>}
             
             <Button asChild size="lg" className="h-12 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.98] text-lg px-8 min-w-[12.5rem]">
               <a href="https://www.linkedin.com/in/saad-amjad-0b398116b/" target="_blank" rel="noopener noreferrer">
