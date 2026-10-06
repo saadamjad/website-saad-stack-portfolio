@@ -40,13 +40,13 @@ If chat requests fail from production with a CORS error in the browser console, 
 that the agent's `CORS_ALLOWED_ORIGINS` includes the *exact* origin the browser sent —
 apex and `www` are different origins, and if your host serves both without redirecting
 one to the other, both need to be listed on the agent side (this has broken chat in
-production once already; see the agent repo's `DEPLOYMENT.md`).
+production once already; see the agent repo's [DEPLOYMENT.md](https://github.com/saadamjad/Langchain-AI-Agent/blob/main/DEPLOYMENT.md)).
 
 ## Analytics
 
 Page views and chat engagement are tracked via a self-hosted
-[Umami](https://umami.is) instance (deployed on Railway, alongside the agent — see the
-agent repo's `DEPLOYMENT.md`). No third-party script, no cookie banner needed.
+[Umami](https://umami.is) instance (deployed on Railway). No third-party script, no
+cookie banner needed. The agent service does not own analytics.
 
 - The tracking script is a single `<script>` tag in `apps/web/index.html`, pointed at
   the Umami instance's URL and `data-website-id`.
