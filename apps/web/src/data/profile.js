@@ -4,9 +4,9 @@
 
 export const introVideo = {
   // Paste a YouTube (watch / youtu.be / shorts) or Loom (share) URL. Empty string hides the section.
-  url: '',
+  url: 'https://www.loom.com/share/c7ea6da1f6fe495ba83d1feac63042d1',
   title: 'Meet Saad: who I am and what I build',
-  duration: '2 min',
+  duration: '', // e.g. '2 min'
 };
 
 export const aiProjects = [
