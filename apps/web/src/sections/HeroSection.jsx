@@ -39,13 +39,13 @@ const HeroSection = ({
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6" style={{
           letterSpacing: '-0.02em'
         }}>
-            Building scalable
+            Full-stack engineer
             <br />
-            <span className="glow-text-blue">mobile & web systems</span>
+            <span className="glow-text-blue">building for the AI era</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Senior full-stack engineer building high-performance mobile apps, distributed backends and AI agent infrastructure
+            I design and ship AI agent infrastructure, scalable backends and web and mobile products, end to end
           </p>
 
           <dl className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-10">

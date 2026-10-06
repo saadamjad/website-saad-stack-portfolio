@@ -37,7 +37,7 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Muhammad Saad Amjad',
-  jobTitle: 'Founding Engineer',
+  jobTitle: 'Full-Stack Software Engineer',
   worksFor: { '@type': 'Organization', name: 'ZIZKA AI' },
   sameAs: [
     'https://github.com/saadamjad',
@@ -52,10 +52,10 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Saad Amjad - Senior Full-Stack Engineer | Mobile & Web Systems</title>
+        <title>Saad Amjad - Full-Stack Software Engineer | AI Agents, Web & Mobile</title>
         <meta
           name="description"
-          content="Founding engineer at ZIZKA AI and senior full-stack engineer with 7 years of experience building scalable mobile, web and AI agent systems. React Native, Node.js, cloud infrastructure and open source."
+          content="Full-stack software engineer and Founding Engineer at ZIZKA AI, building AI agent infrastructure. 7+ years shipping web, backend and mobile products with TypeScript, React, Node.js, AWS and React Native."
         />
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
       </Helmet>

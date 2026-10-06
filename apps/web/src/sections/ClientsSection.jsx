@@ -1,16 +1,16 @@
 import React from 'react';
 
 const ClientsSection = () => {
-  const clients = ['Hao Saudi', 'Retailo', 'Washmen'];
+  const clients = ['ZIZKA AI', 'Washmen', 'Careem', 'InstaShop', 'RIZEK', 'Retailo', 'Hao', 'Sitgo'];
 
   return (
     <section className="py-16 border-y border-border/50 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-medium text-foreground/60 uppercase tracking-wider mb-8">
-          Companies I have built products with
+          Companies and platforms I've shipped for
         </p>
         
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 lg:gap-24">
+        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 md:gap-x-14">
           {clients.map((name) => (
             <div 
               key={name} 

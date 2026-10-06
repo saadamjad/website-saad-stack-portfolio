@@ -1,22 +1,22 @@
 import React from 'react';
 import TechCard from '@/components/TechCard.jsx';
-import { Smartphone, Globe, Server, Cloud, Database, TestTube, BarChart } from 'lucide-react';
+import { Smartphone, Globe, Server, Cloud, Database, TestTube, BarChart, Bot } from 'lucide-react';
 const TechStackSection = () => {
   const techCategories = [{
-    title: 'Mobile development',
-    icon: Smartphone,
+    title: 'AI & agents',
+    icon: Bot,
     technologies: [{
-      name: 'React Native',
-      icon: Smartphone
+      name: 'LangChain',
+      icon: Bot
     }, {
-      name: 'Expo',
-      icon: Smartphone
+      name: 'LLM APIs',
+      icon: Bot
     }, {
-      name: 'iOS',
-      icon: Smartphone
+      name: 'RAG',
+      icon: Bot
     }, {
-      name: 'Android',
-      icon: Smartphone
+      name: 'ZizkaDB',
+      icon: Database
     }]
   }, {
     title: 'Frontend',
@@ -49,6 +49,22 @@ const TechStackSection = () => {
     }, {
       name: 'Sails.js',
       icon: Server
+    }]
+  }, {
+    title: 'Mobile development',
+    icon: Smartphone,
+    technologies: [{
+      name: 'React Native',
+      icon: Smartphone
+    }, {
+      name: 'Expo',
+      icon: Smartphone
+    }, {
+      name: 'iOS',
+      icon: Smartphone
+    }, {
+      name: 'Android',
+      icon: Smartphone
     }]
   }, {
     title: 'Cloud & DevOps',

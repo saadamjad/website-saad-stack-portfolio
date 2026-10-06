@@ -1,2 +1,2 @@
 ## Pages
-- [Saad Amjad - Senior Full-Stack Engineer | Mobile & Web Systems](/): Founding engineer at ZIZKA AI and senior full-stack engineer with 7 years of experience building scalable mobile, web and AI agent systems. React Native, Node.js, cloud infrastructure and open source.
+- [Saad Amjad - Full-Stack Software Engineer | AI Agents, Web & Mobile](/): Full-stack software engineer and Founding Engineer at ZIZKA AI, building AI agent infrastructure. 7+ years shipping web, backend and mobile products with TypeScript, React, Node.js, AWS and React Native.

@@ -5,14 +5,14 @@ const PortfolioSection = () => {
   const projects = [
     {
       title: 'Washmen',
-      description: 'UAE laundry and garment-care platform. Built mobile and backend features for pickup, payments, and high-volume order flows.',
+      description: 'UAE laundry and garment-care platform. I built mobile, web and backend features for pickup, payments and high-volume order flows.',
       techStack: ['React Native', 'Sails.js', 'AWS Lambda', 'SQS', 'SNS'],
       impact: 'https://apps.apple.com/pk/app/washmen-the-finery/id1037965236'
     },
     {
       title: 'Careem PWA',
-      description: 'Progressive web integration that lets Careem users place Washmen orders and complete payments without leaving the app.',
-      techStack: ['React Native', 'Sails.js', 'AWS', 'Redis'],
+      description: 'PWA embedded in the Careem super app. I built the flow that lets Careem users place Washmen orders and pay without leaving Careem.',
+      techStack: ['React', 'PWA', 'Sails.js', 'AWS', 'Redis'],
       impact: 'https://careem.washmen.com'
     },
     {
@@ -48,7 +48,7 @@ const PortfolioSection = () => {
           Featured <span className="text-primary">work</span>
         </h2>
         <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
-          Production products I have built and shipped
+          Production products I've built and shipped, end to end
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -13,19 +13,19 @@ const ReviewsSection = () => {
           Client <span className="text-primary">reviews</span>
         </h2>
         <p className="text-xl text-foreground/70 mb-16 text-center max-w-2xl mx-auto">
-          Recent feedback from clients I have worked with
+          What freelance clients said about working with me
         </p>
 
         <div className="rounded-2xl border border-border/60 bg-white p-3 sm:p-5 shadow-premium-xl">
           <div className="flex flex-col gap-3">
             <img
               src="/reviews/upwork-profile-header.jpg"
-              alt="Client profile and availability"
+              alt="Saad Amjad's verified Upwork profile, based in Karachi and available now"
               className="w-full h-auto rounded-lg"
             />
             <img
               src="/reviews/upwork-work-history.jpg"
-              alt="Client review and completed work history"
+              alt="Upwork work history: four completed jobs and a 5.0-star review praising Saad's full-stack experience"
               className="w-full h-auto rounded-lg"
             />
           </div>
