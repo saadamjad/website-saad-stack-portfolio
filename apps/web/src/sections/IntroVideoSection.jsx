@@ -24,6 +24,7 @@ const IntroVideoSection = () => {
   const [playing, setPlaying] = useState(false);
   const embed = getEmbed(introVideo.url);
   if (!embed) return null;
+  const thumbnail = introVideo.thumbnail || embed.thumbnail;
 
   const play = () => {
     setPlaying(true);
@@ -50,8 +51,8 @@ const IntroVideoSection = () => {
               aria-label={`Play video: ${introVideo.title}`}
               className="group absolute inset-0 w-full h-full flex items-center justify-center"
             >
-              {embed.thumbnail ? (
-                <img src={embed.thumbnail} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-smooth" />
+              {thumbnail ? (
+                <img src={thumbnail} alt="" loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-smooth" />
               ) : (
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-background" />
               )}

@@ -6,7 +6,9 @@ export const introVideo = {
   // Paste a YouTube (watch / youtu.be / shorts) or Loom (share) URL. Empty string hides the section.
   url: 'https://www.loom.com/share/c7ea6da1f6fe495ba83d1feac63042d1',
   title: 'Meet Saad: who I am and what I build',
-  duration: '', // e.g. '2 min'
+  duration: '3:43',
+  // Optional preview image. YouTube thumbnails are derived automatically; Loom needs this.
+  thumbnail: 'https://cdn.loom.com/sessions/thumbnails/c7ea6da1f6fe495ba83d1feac63042d1-65b6d295b4ffde8b.jpg',
 };
 
 export const aiProjects = [
