@@ -2,6 +2,7 @@ import React from 'react';
 import { Github, ExternalLink } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import SectionHeading from '@/components/SectionHeading.jsx';
 import { aiProjects, published } from '@/data/profile';
 import { trackEvent } from '@/lib/analytics';
@@ -38,16 +39,20 @@ const AIProjectsSection = () => {
                   ))}
                 </div>
                 {(p.repo || p.demo) && (
-                  <div className="mt-auto pt-4 border-t border-border/50 flex gap-4">
+                  <div className="mt-auto pt-5 border-t border-border/50 flex flex-wrap gap-3">
                     {p.repo && (
-                      <a href={p.repo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('ai_project_click', { title: p.title, kind: 'repo' })} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
-                        <Github className="w-4 h-4" /> Code
-                      </a>
+                      <Button asChild className="flex-1 min-w-[10rem] h-11 bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30 font-semibold">
+                        <a href={p.repo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('ai_project_click', { title: p.title, kind: 'repo' })}>
+                          <Github className="w-5 h-5 mr-2" /> View on GitHub
+                        </a>
+                      </Button>
                     )}
                     {p.demo && (
-                      <a href={p.demo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('ai_project_click', { title: p.title, kind: 'demo' })} className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
-                        Demo <ExternalLink className="w-4 h-4" />
-                      </a>
+                      <Button asChild className="flex-1 min-w-[10rem] h-11 border-2 border-primary bg-primary/15 text-primary hover:bg-primary hover:text-primary-foreground font-semibold">
+                        <a href={p.demo} target="_blank" rel="noopener noreferrer" onClick={() => trackEvent('ai_project_click', { title: p.title, kind: 'demo' })}>
+                          Live demo <ExternalLink className="w-5 h-5 ml-2" />
+                        </a>
+                      </Button>
                     )}
                   </div>
                 )}
