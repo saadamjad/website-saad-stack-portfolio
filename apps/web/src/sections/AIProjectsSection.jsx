@@ -10,6 +10,7 @@ const statusStyles = {
   Live: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30',
   Building: 'bg-primary/15 text-primary border-primary/30',
   Research: 'bg-amber-500/15 text-amber-400 border-amber-500/30',
+  'Open source': 'bg-sky-500/15 text-sky-400 border-sky-500/30',
 };
 
 const AIProjectsSection = () => {
@@ -20,7 +21,7 @@ const AIProjectsSection = () => {
     <section id="ai" className="py-24 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading title="Building with" accent="AI agents" subtitle="What I'm building now at the edge of agents, LLMs and data infrastructure" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((p) => (
             <Card key={p.title} className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-smooth hover:shadow-premium-lg hover:-translate-y-1 group h-full flex flex-col">
               <CardHeader>

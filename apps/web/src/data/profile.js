@@ -15,31 +15,44 @@ export const aiProjects = [
   {
     title: 'ZizkaDB',
     status: 'Building',
-    description: 'Open-source operational database designed for AI agents. I am the founding engineer, building the frontend and backend systems.',
-    techStack: ['TypeScript', 'Node.js', 'AI Agents'],
-    repo: '', // TODO: GitHub URL
+    description: 'Open-source audit trail database for AI agents: tamper-evident decision logs, session replay, time-travel debugging and drift detection. I am the top contributor, working on the core API and the web dashboard.',
+    techStack: ['Python', 'TypeScript', 'MCP'],
+    repo: 'https://github.com/ZIZKA-AI-SL/ZizkaDB',
+    demo: 'https://db.zizka.ai',
+  },
+  {
+    title: 'LiveKit Voice Agent',
+    status: 'Open source',
+    description: 'Voice AI agent with a full speech-to-text, LLM and text-to-speech pipeline, turn detection and noise cancellation. Calls are tracked in ZizkaDB.',
+    techStack: ['Python', 'LiveKit Agents', 'LLM'],
+    repo: 'https://github.com/saadamjad/livekit-voice-agent',
+    demo: '',
+  },
+  {
+    title: 'AI Customer Support Agent',
+    status: 'Open source',
+    description: 'Customer-support chat agent instrumented end to end with ZizkaDB, with an inspector panel to search, replay and drift-check its decisions.',
+    techStack: ['TypeScript', 'FastAPI', 'ZizkaDB'],
+    repo: 'https://github.com/saadamjad/typescript-AI-agent',
     demo: '',
   },
   {
     title: "Saad's AI Assistant",
     status: 'Live',
-    description: 'LangChain agent behind the chat widget on this site. It answers questions about my experience, projects and availability.',
-    techStack: ['LangChain', 'LLM', 'React'],
-    repo: '',
-    demo: '',
-  },
-  {
-    todo: true,
-    title: 'Agent project name',
-    status: 'Research',
-    description: 'What the agent does and why it matters.',
-    techStack: [],
-    repo: '',
+    description: 'The agent behind the chat widget on this site. It answers questions about my experience, projects and availability from a markdown knowledge base.',
+    techStack: ['Python', 'FastAPI', 'LangChain', 'LangGraph'],
+    repo: 'https://github.com/saadamjad/Langchain-AI-Agent',
     demo: '',
   },
 ];
 
 export const openSource = [
+  {
+    project: 'ZIZKA-AI-SL/ZizkaDB',
+    role: 'Top contributor',
+    description: 'Lead contributor (200+ commits) to an open-source audit trail database for AI agents with 120+ stars. Core API, services, database layer, tests and the web dashboard.',
+    url: 'https://github.com/ZIZKA-AI-SL/ZizkaDB',
+  },
   {
     todo: true,
     project: 'org/repo',
