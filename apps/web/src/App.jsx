@@ -8,7 +8,7 @@ import CredentialsSection from '@/sections/CredentialsSection.jsx';
 import IntroVideoSection, { getEmbed } from '@/sections/IntroVideoSection.jsx';
 import OpenSourceSection from '@/sections/OpenSourceSection.jsx';
 import WritingSection from '@/sections/WritingSection.jsx';
-import { aiProjects, achievements, blog, blogPosts, certifications, introVideo, openSource, published } from '@/data/profile';
+import { aiProjects, achievements, blog, certifications, introVideo, openSource, published } from '@/data/profile';
 import AboutSection from '@/sections/AboutSection.jsx';
 import ClientsSection from '@/sections/ClientsSection.jsx';
 import ContactSection from '@/sections/ContactSection.jsx';
@@ -24,7 +24,6 @@ const hasSection = {
   intro: Boolean(getEmbed(introVideo.url)),
   ai: published(aiProjects).length > 0,
   'open-source': published(openSource).length > 0,
-  writing: published(blogPosts).length > 0,
   credentials: published(certifications).length + published(achievements).length > 0,
 };
 

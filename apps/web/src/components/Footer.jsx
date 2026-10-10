@@ -57,6 +57,7 @@ const Footer = ({ scrollToSection }) => {
               <li><button onClick={() => scrollToSection('about')} className="text-foreground/70 hover:text-primary transition-smooth">About</button></li>
               <li><button onClick={() => scrollToSection('experience')} className="text-foreground/70 hover:text-primary transition-smooth">Experience</button></li>
               <li><button onClick={() => scrollToSection('work')} className="text-foreground/70 hover:text-primary transition-smooth">Work</button></li>
+              <li><button onClick={() => scrollToSection('writing')} className="text-foreground/70 hover:text-primary transition-smooth">Blog</button></li>
               <li><button onClick={() => scrollToSection('services')} className="text-foreground/70 hover:text-primary transition-smooth">Services</button></li>
               <li><button onClick={() => scrollToSection('reviews')} className="text-foreground/70 hover:text-primary transition-smooth">Reviews</button></li>
               <li><button onClick={() => scrollToSection('contact')} className="text-foreground/70 hover:text-primary transition-smooth">Contact</button></li>

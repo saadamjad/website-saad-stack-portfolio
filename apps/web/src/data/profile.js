@@ -63,18 +63,24 @@ export const openSource = [
 ];
 
 export const blog = {
-  // Link to your profile page on Medium, Dev.to, Hashnode, etc.
+  // Link to your profile page on Medium, Dev.to, Hashnode, etc. Powers the "View all posts" button.
   profileUrl: '',
+  platform: '', // e.g. 'Medium'
+  // Shown as chips in the "coming soon" panel until the first post is published.
+  topics: ['AI agents', 'Agent observability', 'LLM engineering', 'Full-stack architecture', 'React Native performance'],
 };
 
+// Add new posts anywhere in this list; the site sorts them newest first and shows the latest 8.
 export const blogPosts = [
   {
     todo: true,
     title: 'Post title',
     platform: 'Medium',
-    date: '2026-01-01',
+    date: '2026-01-01', // YYYY-MM-DD
     readTime: '6 min read',
     excerpt: 'One or two sentences about the post.',
+    tags: ['AI agents'], // optional, first 3 are shown
+    cover: '', // optional image URL; its host must be allowed in public/.htaccess (img-src)
     url: 'https://medium.com/@you/post',
   },
 ];
@@ -106,3 +112,8 @@ export const achievements = [
 ];
 
 export const published = (items) => items.filter((item) => !item.todo);
+
+export const latestPosts = (limit) =>
+  published(blogPosts)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, limit);
